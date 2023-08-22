@@ -1,4 +1,4 @@
-# nvim_config
+# nvim_config for lua
 Backup of nvim config files.
 
 # Fast Installation
