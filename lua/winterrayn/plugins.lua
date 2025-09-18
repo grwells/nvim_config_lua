@@ -3,6 +3,33 @@
 -- 	lazy.nvim plugin manager
 --]]
 return {
+	--[[ 
+	-- 	COLOR SCHEMES 
+	-- ]]
+	--
+	-- dracula colorscheme
+	{
+		'dracula/vim'
+	},
+
+	-- tokyonight colorscheme
+	{
+		'folke/tokyonight.nvim'
+	},
+
+    -- gruvbox
+    {
+        "ellisonleao/gruvbox.nvim"
+    },
+
+    {
+        "LazyVim/LazyVim",
+        enable = false,
+        opts = {
+            colorscheme = "gruvbox",
+        },
+    },
+
 	--[[
 	-- 	TOOLKIT PLUGINS
 	--]]
@@ -11,11 +38,6 @@ return {
 	--   :StartupTime ~/<path_here>/init.vim -<num_samples>
 	{
 		'tweekmonster/startuptime.vim'
-	},
-
-	-- faster filetype detection
-	{
-		'nathom/filetype.nvim'
 	},
 
 	-- plenary
@@ -42,7 +64,16 @@ return {
 	-- telescope/fuzzy finder
 	{
 		'nvim-telescope/telescope.nvim',
-		dependencies = {'nvim-lua/plenary.nvim'}
+		dependencies = {'nvim-lua/plenary.nvim'},
+        -- from lazyvim example
+        opts = {
+            defaults = {
+                layout_strategy = "horizontal",
+                layout_config = { prompt_position = "top" },
+                sorting_strategy = "ascending",
+                winblend = 0,   
+            },
+        },
 	},
 
 	-- code completion
@@ -66,19 +97,6 @@ return {
         'Pocco81/true-zen.nvim'
     },
 
-	--[[ 
-	-- 	COLOR SCHEMES 
-	-- ]]
-	--
-	-- dracula colorscheme
-	{
-		'dracula/vim'
-	},
-
-	-- tokyonight colorscheme
-	{
-		'folke/tokyonight.nvim'
-	},
 
 	--[[
 	-- 	SYNTAX HIGHLIGHTING
@@ -86,13 +104,35 @@ return {
 
 	-- kitty config syntax highlighting
 	{
-		'fladson/vim-kitty'
+		'fladson/vim-kitty',
+        enable = false,
 	},
 
 	-- better syntax highlighting
 	{
 		'nvim-treesitter/nvim-treesitter', 
-		init = TSUpdate
+		init = TSUpdate,
+        opts = {
+            ensure_installed = {
+                lua,
+                rust,
+                zig,
+                python,
+                regex,
+                vim,
+                yaml,
+                json,
+                html,
+                markdown,
+                bash,
+                c,
+                cpp,
+                doxygen,
+                dockerfile,
+                xml,
+                vimdoc,
+            }
+        }
 	},
 
 }
