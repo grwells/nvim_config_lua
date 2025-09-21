@@ -9,25 +9,29 @@ return {
 	--
 	-- dracula colorscheme
 	{
-		'dracula/vim'
+		'dracula/vim',
+        enable = true,
 	},
 
 	-- tokyonight colorscheme
 	{
-		'folke/tokyonight.nvim'
+		'folke/tokyonight.nvim',
+        enable = true,
+        lazy = false,
+        opts = {
+            style = "night", -- night/storm/day/moon
+	    priority = 1000,
+	    -- set as default colorscheme
+	    config = function ()
+		    vim.cmd([[colorscheme tokonight]])
+	    end
+        },
 	},
 
     -- gruvbox
     {
-        "ellisonleao/gruvbox.nvim"
-    },
-
-    {
-        "LazyVim/LazyVim",
-        enable = false,
-        opts = {
-            colorscheme = "gruvbox",
-        },
+        "ellisonleao/gruvbox.nvim",
+        enable = true,
     },
 
 	--[[
@@ -72,6 +76,8 @@ return {
                 layout_config = { prompt_position = "top" },
                 sorting_strategy = "ascending",
                 winblend = 0,   
+                scroll_strategy = "limit", -- don't loop scroll
+                path_display = "filename_first",
             },
         },
 	},
@@ -79,35 +85,42 @@ return {
 	-- code completion
 	{
 		'neoclide/coc.nvim', 
-		branch =  'release'
+		branch =  'release',
+		lazy = true,
 	},
 
 	-- quote and bracket completion
 	{
-		'jiangmiao/auto-pairs'
+		'jiangmiao/auto-pairs',
+		lazy = true,
 	},
 
 	-- adds anotations
 	{
 		'danymat/neogen', 
-		branch = 'main'
+		branch = 'main',
+		lazy = true,
 	},
 
+    -- zen for writing
     {
-        'Pocco81/true-zen.nvim'
+        'Pocco81/true-zen.nvim',
+	lazy = true,
+    },
+
+    {
+        "mason-org/mason.nvim",
+        enable = true,
+        opts = {
+
+        },
+	lazy = true,
     },
 
 
 	--[[
 	-- 	SYNTAX HIGHLIGHTING
 	--]]
-
-	-- kitty config syntax highlighting
-	{
-		'fladson/vim-kitty',
-        enable = false,
-	},
-
 	-- better syntax highlighting
 	{
 		'nvim-treesitter/nvim-treesitter', 
@@ -134,6 +147,15 @@ return {
             }
         }
 	},
+
+    {
+        'mhinz/vim-startify',
+        enable = true,
+        opts = {},
+        config = function () end,
+	lazy = false,
+	priority = 1000,
+    },
 
 }
 --[[

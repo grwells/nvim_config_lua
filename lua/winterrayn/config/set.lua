@@ -39,7 +39,7 @@ vim.opt.ttyfast = true
 -- search settings
 vim.opt.incsearch = true
 
--- termguicolors
+-- termguicolors (enables 24bit colors)
 vim.opt.termguicolors = true
 
 -- scrolling 

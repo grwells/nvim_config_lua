@@ -1,4 +1,0 @@
---[[
---      File types that are missed by the 
---      vim.filetype lua module.
---]]

@@ -10,7 +10,7 @@
 
 -- set map leader
 --      * if empty defaults to backslash -> '\'
-vim.g.mapleader = ""
+--vim.g.mapleader = ""
 
 -- open file explorer in vim
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -47,8 +47,7 @@ vim.api.nvim_create_autocmd(
     {
         pattern = {'*.tex', '*.md'},
         group = docs,
-        callback = function()
-            --vim.opt.nowrap = false
+        callback = function() --vim.opt.nowrap = false
             -- activate spell check
             vim.cmd("setlocal spell spelllang=en_us")
             -- set wrap and linebreak
@@ -69,3 +68,5 @@ vim.api.nvim_create_autocmd(
         end
     }
 )
+
+require("remap.telescope_remap")
