@@ -11,6 +11,9 @@
 -- set map leader (set in config/lazy.lua config file)
 --      * if empty defaults to backslash -> '\'
 
+-- load which-key mappings
+require("config.wk")
+
 -- open file explorer in vim
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, {desc = "open netrw"})
 
@@ -30,7 +33,6 @@ vim.keymap.set("x", "<leader>p", "\"_dP", {desc = "preserve copy buffer after pa
 --]]
 vim.keymap.set('n', '<space>', 'za', {silent=true, desc = "toggle fold"})
 --vim.keymap.set('n', '<shift><space>', 'zA', {silent=true})
-
 
 --[[
 --      Autocommand Groups

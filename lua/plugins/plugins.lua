@@ -19,7 +19,11 @@ return {
         'folke/which-key.nvim',
         enable = true,
         event = "VeryLazy",
-        opts = {},
+        opts = {
+            preset = "helix", -- small floating box w/ border
+            expand = 0,
+            sort = {"group"},
+        },
         keys = {
             {"<leader>?",
             function ()

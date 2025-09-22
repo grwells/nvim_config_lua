@@ -2,7 +2,7 @@
 require('config.lazy')
 
 -- load keybindings for nvim
-require("remap.remap")
+require("config.remap")
 
 -- set colorscheme
 -- colorschemes installed/loaded in plugins
