@@ -33,6 +33,7 @@ return {
             }
         },
     },
+
 	-- plenary
 	-- lua module for asynchronous programming with coroutines
 	{
@@ -43,14 +44,32 @@ return {
 	-- 	EDITOR FEATURES
 	--]]
 	--
+
+    -- auto matching of parenthesis, etc.
+    {
+        'nvim-mini/mini.pairs',
+        enable = true,
+        event = "VeryLazy",
+        opts = {
+            modes = {insert = true, command = true, terminal = false},
+            -- skip autopair when next character is one of these
+            skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
+            -- skip autopair when the cursor is inside these treesitter nodes
+            skip_ts = { "string" },
+            -- skip autopair when next character is closing pair
+            -- and there are more closing pairs than opening pairs
+            skip_unbalanced = true,
+            -- better deal with markdown code blocks
+            markdown = true,
+        },
+    },
     
 	-- lua fork of vim-devicons 
 	{
 		'nvim-tree/nvim-web-devicons'
 	},
 
-	-- adds anotations
-    -- TODO: better description of what this does
+	-- generate annotations for the current file
 	{
 		'danymat/neogen', 
 		branch = 'main',
