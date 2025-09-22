@@ -26,6 +26,9 @@ vim.g.maplocalleader = "\\"
 -- configure other settings here
 require("config.set")
 
+-- configure lsp
+require("lsp.lsp_init")
+
 -- setup lazy.nvim
 require("lazy").setup({
 	spec = {

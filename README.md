@@ -24,3 +24,26 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hermit.zip
 unzip Hermit.zip -d /usr/share/fonts
 ```
 After this, set the desired font for your terminal and test with Neovim or other to verify everything is working correctly. If you don't see the font appear in the list of options for your terminal, you may need to restart your system.
+
+# Execution Overview
+
+1. `init.lua`
+
+    1. `lua/config/lazy.lua`
+
+        1. Bootstrap lazy.nvim.
+        2. Load plugins from `lua/plugins/` files. 
+        3. Set the map leaders. 
+        4. Load nvim configuration settings from `lua/config/set.lua` 
+        5. Load `vim.lsp` configuration from `lua/lsp/lsp_init.lua`.
+        6. Call lazy.nvim setup.
+
+    2. `lua/remap.remap.lua`
+    3. Set colorscheme.
+
+# LSP Configuration
+Currently configured such that:
+
+1. `lua/lsp/lsp_init.lua` sets default configuration and root markers and is where LSP configurations should be included (`require(lsp/<config>)`) and then enabled with `vim.lsp.enable(<config>)`.
+
+2. Configurations may be specified in one file for simplicity, though currently some have their own configuration file(clangd).

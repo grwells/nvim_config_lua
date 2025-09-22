@@ -39,13 +39,14 @@ return {
 	-- 	EDITOR FEATURES
 	--]]
 	--
-
+    
 	-- lua fork of vim-devicons 
 	{
 		'nvim-tree/nvim-web-devicons'
 	},
 
 	-- adds anotations
+    -- TODO: better description of what this does
 	{
 		'danymat/neogen', 
 		branch = 'main',

@@ -44,23 +44,3 @@ vim.opt.termguicolors = true
 
 -- scrolling 
 vim.opt.scrolloff = 8
-
--- [[
--- LSP Configuration
--- Modify the builtin options through 
--- the vim API(see :h vim.lsp.enable(), etc)
--- ]]
-vim.lsp.config('*', 
-{
-    capabilities = {
-        textDocument = {
-            semanticTokens = {
-                multilineTokenSupport = true,
-            }
-        }
-    },
-    root_markers = { '.git', },
-    -- enable for c/c++ files
-    filetypes = {'c', 'cpp'},
-})
-vim.lsp.enable('clangd')
