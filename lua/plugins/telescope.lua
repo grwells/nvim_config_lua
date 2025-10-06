@@ -6,8 +6,8 @@ return {
         -- from lazyvim example
         opts = {
             defaults = {
-                layout_strategy = "horizontal",
-                layout_config = { prompt_position = "top" },
+                layout_strategy = "flex",
+                layout_config = { prompt_position = "top", width = 0.6, },
                 sorting_strategy = "ascending",
                 winblend = 0,   
                 scroll_strategy = "limit", -- don't loop scroll

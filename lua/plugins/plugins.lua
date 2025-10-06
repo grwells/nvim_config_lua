@@ -78,13 +78,14 @@ return {
 
     -- zen for writing
     {
-        'Pocco81/true-zen.nvim',
-        lazy = true,
+        'folke/zen-mode.nvim',
+        lazy = false,
+        priority = 1000,
         keys = {
-            {'<leader>zn', ':TZNarrow<CR>', desc = "Narrow view"},
-            {'<leader>zf', ':TZFocus<CR>',desc = "Focused view"},
-            {'<leader>zm', ':TZMinimalist<CR>',desc = "Minimalist view"},
-            {'<leader>za', ':TZAtaraxis<CR>', desc = "Default view"},
+            --{'<leader>zm', ':ZenMode<CR>',desc = "Toggle zen mode"},
+            --{'<leader>zn', ':TZNarrow<CR>', desc = "Narrow view"},
+            --{'<leader>zf', ':TZFocus<CR>',desc = "Focused view"},
+            --{'<leader>za', ':TZAtaraxis<CR>', desc = "Default view"},
         }
     },
 	--[[

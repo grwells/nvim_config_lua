@@ -15,11 +15,19 @@ wk.add(
             require("telescope.builtin").grep_string,
             desc = "Search for Symbol - under cursor",
         }, 
-        { -- "find file"
+        { -- "find file PWD"
             "<leader>sf",
             mode = {"n"},
+            function()
+                require("telescope.builtin").find_files({cwd = vim.env.PWD})
+            end,
+            desc = "Search for Files(PWD)",
+        }, 
+        { -- "find file CWD"
+            "<leader>sF",
+            mode = {"n"},
             require("telescope.builtin").find_files,
-            desc = "Search for File",
+            desc = "Search for File(CWD)",
         }, 
         { -- "find grep"
             "<leader>sg",
@@ -39,16 +47,35 @@ wk.add(
             require("telescope.builtin").help_tags,
             desc = "Search for Help tag",
         }, 
+        { -- "search for entries in the man pages"
+            "<leader>sm",
+            mode = {"n"},
+            require("telescope.builtin").man_pages,
+            desc = "Search Man pages",
+        }, 
+        { -- "look at quick fix list"
+            "<leader>sq",
+            mode = {"n"},
+            require("telescope.builtin").quickfix,
+            desc = "Search quick fix list",
+        }, 
+        { -- "look at quick fix list"
+            "<leader>sx",
+            mode = {"n"},
+            require("telescope.builtin").marks,
+            desc = "Search vim marks",
+        }, 
     }
 )
 
 -- Zen modes & Code Folding
 wk.add({
     {'<leader>z', group='[z]en - focus'},
-    {'<leader>zn', ':TZNarrow<CR>', desc = "Narrow view"},
-    {'<leader>zf', ':TZFocus<CR>',desc = "Focused view"},
-    {'<leader>zm', ':TZMinimalist<CR>',desc = "Minimalist view"},
-    {'<leader>za', ':TZAtaraxis<CR>', desc = "Default view"},
+    {'<leader>zm', ':ZenMode<CR>',desc = "Toggle zen mode"},
+    --{'<leader>zn', ':TZNarrow<CR>', desc = "Narrow view"},
+    --{'<leader>zf', ':TZFocus<CR>',desc = "Focused view"},
+    --{'<leader>zm', ':TZMinimalist<CR>',desc = "Minimalist view"},
+    --{'<leader>za', ':TZAtaraxis<CR>', desc = "Default view"},
 })
 
 -- LSP Format Maps
