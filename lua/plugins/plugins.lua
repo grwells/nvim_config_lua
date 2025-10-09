@@ -48,7 +48,7 @@ return {
     -- auto matching of parenthesis, etc.
     {
         'nvim-mini/mini.pairs',
-        enable = true,
+        enabled = true,
         event = "VeryLazy",
         opts = {
             modes = {insert = true, command = true, terminal = false},
