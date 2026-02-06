@@ -46,6 +46,7 @@ return {
 	--
 
     -- auto matching of parenthesis, etc.
+    -- NOTE: i_C-v will skip autopair
     {
         'nvim-mini/mini.pairs',
         enabled = true,
