@@ -93,28 +93,33 @@ return {
 	-- 	SYNTAX HIGHLIGHTING
 	--]]
 	-- better syntax highlighting
+    -- Supported Languages: https://github.com/nvim-treesitter/nvim-treesitter/blob/main/SUPPORTED_LANGUAGES.md
 	{
 		'nvim-treesitter/nvim-treesitter', 
 		init = TSUpdate,
         opts = {
             ensure_installed = {
-                lua,
-                rust,
-                zig,
-                python,
-                regex,
-                vim,
-                yaml,
-                json,
-                html,
-                markdown,
                 bash,
                 c,
                 cpp,
+                c_sharp,
                 doxygen,
                 dockerfile,
-                xml,
+                html,
+                javascript,
+                json,
+                latex,
+                lua,
+                markdown,
+                python,
+                rust,
+                regex,
+                typescript,
+                vim,
                 vimdoc,
+                xml,
+                yaml,
+                zig,
             }
         },
 	},

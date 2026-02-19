@@ -3,12 +3,9 @@
 -- ]]
 --
 -- create configuration entry
-vim.lsp.config(
-    'clangd', -- clangd for C/C++
-    {
+vim.lsp.config['clangd'] =  {
         cmd = {'clangd'},
-        root_markers = {'.clangd', '.clang-format', '.clang-tidy', '.git'},
+        root_markers = {'.clangd', '.clang-format', '.clang-tidy'},
         filetypes = {'c', 'cpp'},
         offsetEncoding = { 'utf-8', 'utf-16' },
-    }
-)
+}
