@@ -5,13 +5,16 @@
 --
 -- Default mappings :h lsp-defaults
 -- ]]
-vim.lsp.config(
-    '*', -- default for all clients
-    {
+vim.lsp.config['*'] = {
         root_markers = { '.git', },
-    })
+}
+
 
 -- load configs
 require("lsp.clangd")
+require('lsp.zigls')
 
-vim.lsp.enable('clangd')
+-- enable
+vim.lsp.enable('clangd_ls')
+vim.lsp.enable('zig_ls')
+
