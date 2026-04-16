@@ -31,7 +31,7 @@ require("lsp.python")
 vim.lsp.enable('python_ls')
 
 require("lsp.typescript-ls")
-vim.lsp.enable('typescript-ls')
+vim.lsp.enable('typescript_ls')
 
 require("lsp.zig")
 vim.lsp.enable('zls')

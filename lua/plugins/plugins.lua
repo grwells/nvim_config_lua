@@ -74,6 +74,7 @@ return {
 	{
 		'danymat/neogen', 
 		branch = 'main',
+        config = true,
 		lazy = true,
 	},
 

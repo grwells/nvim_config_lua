@@ -3,7 +3,7 @@
 --]]
 vim.lsp.config['csharp-ls'] = {
         cmd = {'csharp-ls'},
-        root_markers = {'.sln',},
+        root_markers = {'.sln', '.csproj'},
         filetypes = {'cs'},
         root_dir = vim.fs.root(
             0,
