@@ -1,3 +1,5 @@
+-- see :h ui2, replaces cmdline & message presentation to allow g <
+require('vim._core.ui2').enable({})
 -- load lazy.nvim & vim settings
 require('config.lazy')
 

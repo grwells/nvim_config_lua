@@ -125,12 +125,12 @@ return {
         },
 	},
 
-    {
-        'mhinz/vim-startify',
-        enable = true,
-        opts = {},
-        config = function () end,
-        lazy = false,
-        priority = 1000,
-    },
+    -- {
+    --     'mhinz/vim-startify',
+    --     enable = false,
+    --     opts = {},
+    --     config = function () end,
+    --     lazy = false,
+    --     priority = 1000,
+    -- },
 }
