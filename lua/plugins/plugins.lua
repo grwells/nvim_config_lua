@@ -1,18 +1,18 @@
 --[[
--- 	Generate a table of plugins to be loaded by 
+-- 	Generate a table of plugins to be loaded by
 -- 	lazy.nvim plugin manager
 --]]
 return {
 
-	--[[
+    --[[
 	-- 	TOOLKIT PLUGINS
 	--]]
 
-	-- startup time analysis
-	--   :StartupTime ~/<path_here>/init.vim -<num_samples>
-	{
-		'tweekmonster/startuptime.vim'
-	},
+    -- startup time analysis
+    --   :StartupTime ~/<path_here>/init.vim -<num_samples>
+    {
+        'tweekmonster/startuptime.vim'
+    },
 
     -- shows mapped keys
     {
@@ -22,28 +22,29 @@ return {
         opts = {
             preset = "helix", -- small floating box w/ border
             expand = 0,
-            sort = {"group"},
+            sort = { "local" },
         },
         keys = {
-            {"<leader>?",
-            function ()
-                require("which-key").show({ global = false })
-            end,
-            desc = "Buffer Local Keymaps (which-key)",
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
             }
         },
     },
 
-	-- plenary
-	-- lua module for asynchronous programming with coroutines
-	{
-		'nvim-lua/plenary.nvim'
-	},
+    -- plenary
+    -- lua module for asynchronous programming with coroutines
+    {
+        'nvim-lua/plenary.nvim'
+    },
 
-	--[[ 
+    --[[
 	-- 	EDITOR FEATURES
 	--]]
-	--
+    --
 
     -- auto matching of parenthesis, etc.
     -- NOTE: i_C-v will skip autopair
@@ -52,7 +53,7 @@ return {
         enabled = true,
         event = "VeryLazy",
         opts = {
-            modes = {insert = true, command = true, terminal = false},
+            modes = { insert = true, command = true, terminal = false },
             -- skip autopair when next character is one of these
             skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
             -- skip autopair when the cursor is inside these treesitter nodes
@@ -64,19 +65,19 @@ return {
             markdown = true,
         },
     },
-    
-	-- lua fork of vim-devicons 
-	{
-		'nvim-tree/nvim-web-devicons'
-	},
 
-	-- generate annotations for the current file
-	{
-		'danymat/neogen', 
-		branch = 'main',
+    -- lua fork of vim-devicons
+    {
+        'nvim-tree/nvim-web-devicons'
+    },
+
+    -- generate annotations for the current file
+    {
+        'danymat/neogen',
+        branch = 'main',
         config = true,
-		lazy = true,
-	},
+        lazy = true,
+    },
 
     -- zen for writing
     {
@@ -90,14 +91,14 @@ return {
             --{'<leader>za', ':TZAtaraxis<CR>', desc = "Default view"},
         }
     },
-	--[[
+    --[[
 	-- 	SYNTAX HIGHLIGHTING
 	--]]
-	-- better syntax highlighting
+    -- better syntax highlighting
     -- Supported Languages: https://github.com/nvim-treesitter/nvim-treesitter/blob/main/SUPPORTED_LANGUAGES.md
-	{
-		'nvim-treesitter/nvim-treesitter', 
-		init = TSUpdate,
+    {
+        'nvim-treesitter/nvim-treesitter',
+        init = TSUpdate,
         opts = {
             ensure_installed = {
                 bash,
@@ -123,7 +124,7 @@ return {
                 zig,
             }
         },
-	},
+    },
 
     -- {
     --     'mhinz/vim-startify',
@@ -133,4 +134,24 @@ return {
     --     lazy = false,
     --     priority = 1000,
     -- },
+
+    -- [[
+    -- VimTeX (https://github.com/lervag/vimtex)
+    -- A plugin providing:
+    --  a) <leader>ll - continuous compilation for latex 
+    --  b) <leader>lv - "live" pdf preview (while continuously compiling) 
+    --
+    -- Requires:
+    --  - Zathura Document Viewer 
+    --      - project:  https://pwmt.org/projects/zathura/
+    --      - docs:     https://pwmt.org/projects/zathura/documentation/
+    --
+    -- ]]
+    {
+        "lervag/vimtex",
+        lazy = false, -- we don't want to lazy load VimTeX
+        init = function()
+            vim.g.vimtex_view_method = "zathura"
+        end
+    },
 }
